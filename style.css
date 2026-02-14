@@ -1,0 +1,92 @@
+h1{margin:0 0 6px 0}
+:root{--accent-purple:#7567AC;--accent-green:#3AAF7E;--muted:#6b7280}
+*{box-sizing:border-box;font-family:Inter,system-ui,Segoe UI,Roboto,"Helvetica Neue",Arial}
+
+body{background:#f6f7f8;padding:calc(48px + 1cm) 4cm;}
+h1{margin:0 0 6px 0}
+.hint{margin:0 0 18px 0;color:var(--muted)}
+.controls{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:16px}
+.control{background:transparent;padding:10px;border-radius:8px;min-width:160px}
+.control label{display:block;font-size:13px;color:var(--muted);margin-bottom:6px}
+select,input[type=range]{width:100%}
+.envelope{flex:1;min-width:260px;padding:12px 10px;border-radius:8px;border:1px solid rgba(0,0,0,0.06);background:#ffffff;align-self:flex-start}
+.keyboard{display:flex;gap:6px;flex-wrap:nowrap;padding:18px;background:transparent;border-radius:8px;overflow:auto;justify-content:center;position:relative}
+.key{position:relative;display:flex;align-items:end;justify-content:center;flex-direction:column;padding-bottom:6px;color:#071021;font-weight:600;user-select:none;cursor:pointer}
+.key.white{width:72px;height:220px;background:var(--accent-purple);border-radius:8px;border:1px solid #e6e6e6;position:relative;z-index:1;display:flex;flex-direction:column;justify-content:flex-end;padding-bottom:12px}
+.key.black{width:48px;height:140px;background:var(--accent-green);color:#fff;margin-left:-24px;margin-right:-24px;border-radius:6px;z-index:5;transform:translateY(-72px);display:flex;align-items:center;justify-content:center}
+.key.active{box-shadow:0 12px 36px rgba(0,0,0,0.08)}
+.key.white.active{transform:translateY(6px)}
+.key.black.active{transform:translateY(-64px)}
+label small{display:block;color:var(--muted);font-weight:400}
+footer{margin-top:12px;color:var(--muted)}
+
+/* layout full height */
+.container{display:flex;flex-direction:column;max-width:1100px;margin:40px auto;padding:28px;box-sizing:border-box}
+.app-header{display:flex;flex-direction:column;align-items:center;gap:6px;margin-bottom:12px}
+.brand{font-family:Inter,system-ui,Segoe UI,Roboto,"Helvetica Neue",Arial;font-weight:800;font-size:28px;color:var(--accent-purple)}
+.brand .brand-accent{color:var(--accent-green)}
+.subtitle{font-size:15px;color:var(--muted)}
+.app-header{transform:translateY(-2cm);z-index:10}
+.controls{display:flex;gap:10px;align-items:center}
+.controls .control{background:transparent;padding:8px;border-radius:8px}
+.main-area{display:flex;flex-direction:column;flex:1;min-height:0}
+.keyboard{flex:1;align-items:flex-end;padding:10px}
+
+/* colors for keys per user request */
+.key{transition:background 220ms ease, transform 120ms ease}
+.key.white{color:#111}
+.key.black{color:#fff}
+.key.white.active{background:#967ed1}
+.key.black.active{background:#5fcf9c}
+
+h1{margin:0 0 6px 0}
+.hint{margin:0 0 18px 0;color:var(--muted)}
+.preset-indicator{display:none}
+.controls{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:16px}
+.control{background:rgba(255,255,255,0.02);padding:10px;border-radius:8px;min-width:160px}
+.control label{display:block;font-size:13px;color:var(--muted);margin-bottom:6px}
+.env-label{display:block;margin-bottom:8px;font-size:14px}
+.env-label input{margin-left:8px}
+select,input[type=range]{width:100%}
+.envelope{flex:1;min-width:260px;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.03)}
+.keyboard{display:flex;gap:8px;flex-wrap:nowrap;padding:12px 10px;background:rgba(255,255,255,0.01);border-radius:8px;overflow:auto;margin-top:1cm;justify-content:center}
+.key{position:relative;display:flex;align-items:end;justify-content:center;flex-direction:column;padding-bottom:8px;color:#071021;font-weight:600;user-select:none;cursor:pointer}
+.key.white{width:88px;height:260px;background:#fff3;border-radius:8px;display:flex;flex-direction:column;justify-content:flex-end;padding-bottom:12px;border:1px solid #e6e6e6}
+.key.black{width:56px;height:170px;background:#071021;color:var(--white);margin-left:-28px;margin-right:-28px;z-index:3;border-radius:6px;display:flex;align-items:center;justify-content:center}
+.key.active{outline:3px solid rgba(125,211,252,0.12);box-shadow:0 6px 18px rgba(125,211,252,0.06)}
+label small{display:block;color:var(--muted);font-weight:400}
+.synth-label{display:block;text-align:center;margin-top:1.6cm;font-size:12px;color:var(--muted);opacity:0.95}
+
+/* splash screen */
+.splash{position:fixed;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;background:transparent;z-index:9999;transition:opacity 360ms ease}
+.splash.fade-out{opacity:0;pointer-events:none}
+.splash-brand{position:absolute;left:50%;transform:translateX(-50%);top:calc(40px + 2cm);text-align:center}
+.splash-brand .brand{font-size:28px}
+.splash-brand .subtitle{font-size:15px}
+.splash-sub{margin-top:9cm;font-size:18px;font-weight:600;color:var(--muted);opacity:0.95;text-align:center}
+.start-btn{font-size:20px;padding:18px 28px;border-radius:12px;border:0;background:var(--accent-green);color:#042023;font-weight:700;cursor:pointer;transition:background 180ms ease, transform 120ms ease;margin-top:7cm}
+.start-btn.pressed{background:var(--accent-purple);color:#fff}
+.start-btn:active{transform:translateY(2px)}
+
+/* hide main before start */
+.container.hidden{display:none}
+
+/* key label styling improvements */
+.key{display:flex;align-items:center;justify-content:center;flex-direction:column}
+.key-label{pointer-events:none;position:relative;z-index:2;font-weight:700;text-align:center;text-shadow:0 1px 2px rgba(0,0,0,0.6)}
+.key-note{pointer-events:none;position:relative;z-index:2;font-weight:700;text-align:center;text-shadow:0 1px 2px rgba(0,0,0,0.6)}
+.key.white .key-note{color:#071021;font-size:18px}
+.key.white .key-label{color:#071021;font-size:11px;opacity:0.95}
+.key.black .key-note{color:#ffffff;font-size:14px}
+.key.black .key-label{color:#ffffff;font-size:10px;opacity:0.95}
+
+/* name displayed above the note */
+.key-name{pointer-events:none;position:relative;z-index:2;font-weight:700;text-align:center;margin-bottom:4px;font-size:10px;text-shadow:0 1px 2px rgba(0,0,0,0.35)}
+.key.white .key-name{color:#111}
+.key.black .key-name{color:#ffffff}
+@media (max-width:1000px){
+  body{padding:24px}
+  .container{padding:18px;margin:18px auto}
+  .key.white{width:48px;height:140px}
+  .key.black{width:34px;height:96px;margin-left:-17px;margin-right:-17px}
+}
